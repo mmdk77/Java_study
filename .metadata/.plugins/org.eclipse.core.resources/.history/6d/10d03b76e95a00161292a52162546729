@@ -46,12 +46,12 @@ public class Login extends JFrame {
 		//컴포넌트 부착 -로그인 제목
 		panel_title.add(label_title);
 		
-		//panel_id - label,textfield
+		//id,password label
 		panel_id.add(label_id);
-		panel_id.add(tf_id);
-		
-		//panel_pwd - label, textfile
 		panel_pwd.add(label_pwd);
+		
+		//textfield
+		panel_id.add(tf_id);
 		panel_pwd.add(tf_pwd);
 		
 		//button
