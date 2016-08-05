@@ -1,0 +1,14 @@
+/*
+ *자바의 GUI관련 API들은 JAVA.AWT패키지에 지원,
+ *윈도우와 같은 컴포넌트들을 포함하는 객체는 배치 - 5가지의 배치관리자 실습. */
+
+package gui;
+
+public class LayoutTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

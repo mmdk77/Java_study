@@ -1,0 +1,23 @@
+package gui;
+
+import javax.swing.JFrame;
+
+public class KeyEventTest extends JFrame{
+	
+	
+	
+	public KeyEventTest() {
+		// TODO Auto-generated constructor stub
+		super("키보드 이벤트");
+		
+		this.setSize(300,400	);
+		this.setVisible(true);
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

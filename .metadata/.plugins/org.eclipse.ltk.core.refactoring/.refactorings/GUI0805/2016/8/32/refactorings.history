@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;gui.LayoutTest&apos; to &apos;BorderTest&apos;&#x0D;&#x0A;- Original project: &apos;GUI0805&apos;&#x0D;&#x0A;- Original element: &apos;gui.LayoutTest&apos;&#x0D;&#x0A;- Renamed element: &apos;gui.BorderTest&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;LayoutTest&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;gui{LayoutTest.java[LayoutTest" matchStrategy="1" name="BorderTest" qualified="false" references="true" similarDeclarations="false" stamp="1470356517526" textual="false" version="1.0"/>
+</session>
