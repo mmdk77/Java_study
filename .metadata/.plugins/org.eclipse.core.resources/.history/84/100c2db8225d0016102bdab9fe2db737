@@ -1,0 +1,19 @@
+
+/*Grapics °´Ã¼*/
+package com.sds.gallery;
+
+import javax.swing.JButton;
+
+public class ImageTest extends JFrame{
+	JButton btn;
+	
+	public ImageTest() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new ImageTest();
+	}
+
+}

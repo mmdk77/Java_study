@@ -1,0 +1,35 @@
+package com.sds.gui;
+
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+public class EventTest2 extends JFrame{
+	
+	private JButton btn;
+	
+	public EventTest2() {
+		// TODO Auto-generated constructor stub
+		super("이벤트 테스트2");
+		
+		this.setVisible(true);
+		this.setSize(300, 400);
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+		this.setLayout(new FlowLayout());
+		btn = new JButton("확인");
+		
+		this.add(btn);
+		
+		btn.addActionListener(new MyListener());
+		
+	}
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new EventTest2();
+	}
+
+}

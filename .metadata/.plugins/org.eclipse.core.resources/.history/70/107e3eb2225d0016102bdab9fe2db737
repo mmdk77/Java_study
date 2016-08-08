@@ -1,0 +1,12 @@
+
+/*Grapics °´Ã¼*/
+package com.sds.gallery;
+
+public class ImageTest extends JFrame{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

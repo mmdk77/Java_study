@@ -1,0 +1,39 @@
+package com.sds.chatting;
+
+import java.awt.BorderLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollBar;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+public class ChatB extends JFrame {
+	JTextArea area;
+	JPanel panel;
+	JTextField tf;
+	JScrollPane scroll;
+
+	public ChatB() {
+		// TODO Auto-generated constructor stub
+		area = new JTextArea();
+		panel = new JPanel();
+		tf = new JTextField(15);
+
+		// area俊 胶农费 利侩
+		scroll = new JScrollPane(area);
+
+		// center - scroll(area)
+		add(scroll);
+
+		// south - (panel)txt&btn
+		panel.add(tf);
+		add(panel, BorderLayout.SOUTH);
+
+		// frame 加己
+		setSize(300, 400);
+		setVisible(true);
+	}
+}

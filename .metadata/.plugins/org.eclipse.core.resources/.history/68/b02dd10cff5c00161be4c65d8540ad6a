@@ -1,0 +1,37 @@
+package com.sds.gui;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class EventTest extends JFrame{
+
+		private JPanel panel;
+		private JTextField tf;
+		private JButton btn;
+
+		public EventTest() {
+			// TODO Auto-generated constructor stub
+			super("이벤트 구현");
+			panel = new JPanel();
+			tf = new JTextField();
+			btn = new JButton("확인");
+			
+			this.setVisible(true);
+			this.setSize(300,400);
+			this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+			
+			panel.add(tf);
+			panel.add(btn);
+			
+			this.add(panel);
+			
+			
+		}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		newEventTest();
+	}
+
+}

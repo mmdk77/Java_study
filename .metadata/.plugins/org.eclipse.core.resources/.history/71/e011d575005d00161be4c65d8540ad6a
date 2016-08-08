@@ -1,0 +1,83 @@
+/*
+	1.리스터선택
+	2.리스너 메소드 재정의
+	3.이벤트 소스와 리스너와 연결
+*/
+package com.sds.gui;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class EventTest extends JFrame implements ActionListener, KeyListener{
+
+		private JPanel panel;
+		private JTextField tf;
+		private JButton btn;
+
+		public EventTest() {
+			// TODO Auto-generated constructor stub
+			super("이벤트 구현");
+			panel = new JPanel();
+			tf = new JTextField(15);
+			btn = new JButton("확인");
+			
+			this.setVisible(true);
+			this.setSize(300,400);
+			this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+			
+			panel.add(tf);
+			panel.add(btn);
+			
+			this.add(panel);
+			
+			btn.addActionListener(this);
+			tf.addKeyListener(this.);
+		}
+		
+
+		
+		
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		Object obj = e.getSource();
+		System.out.println("눌렀눌렀");
+		
+	}
+	@Override
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
+		System.out.println("키보드눌렀");
+	}
+	
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+	
+	
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new EventTest();
+	}
+
+
+
+
+
+}

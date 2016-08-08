@@ -1,0 +1,23 @@
+package com.sds.gallery;
+
+import java.awt.Canvas;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Toolkit;
+
+public class XCanvas extends Canvas{
+	Toolkit kit = Toolkit.getDefaultToolkit();	
+	Image[] img;
+	
+	@Override
+	public void paint(Graphics g) {
+		// TODO Auto-generated method stub
+		g.drawImage(img, x, y, observer);
+	
+	
+	}
+	
+	
+
+
+}

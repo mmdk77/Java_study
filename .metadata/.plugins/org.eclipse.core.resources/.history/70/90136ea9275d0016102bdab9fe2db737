@@ -1,0 +1,7 @@
+package com.sds.gallery;
+
+import java.awt.Canvas;
+
+public class MyCanvas extends Canvas{
+
+}

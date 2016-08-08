@@ -1,0 +1,30 @@
+package com.sds.gui;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+public class EventTest2 extends JFrame{
+	
+	private JButton btn;
+	
+	public EventTest2() {
+		// TODO Auto-generated constructor stub
+		super("이벤트 테스트2");
+		
+		this.setVisible(true);
+		this.setSize(300, 400);
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+		btn = new JButton();
+		
+		this.add(btn);
+		
+	}
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

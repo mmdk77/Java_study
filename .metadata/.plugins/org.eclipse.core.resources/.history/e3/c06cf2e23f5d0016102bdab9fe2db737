@@ -1,0 +1,38 @@
+/*inner Class ½Ç½À*/
+
+package com.sds.ocjp;
+
+import java.awt.Canvas;
+import java.awt.Graphics;
+
+import javax.swing.JFrame;
+
+public class AnonyTest extends JFrame {
+	Canvas can;
+
+	public AnonyTest() {
+		// TODO Auto-generated constructor stub
+		can = new Canvas(){
+			@Override
+			public void paint(Graphics g) {
+				// TODO Auto-generated method stub
+				super.paint(g);
+			}
+			
+		};
+		
+		add(can);
+		
+		/*add(can = new Canvas(){ ... })*/
+		setSize(300,400);
+		setVisible(true);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new AnonyTest();
+	}
+
+}

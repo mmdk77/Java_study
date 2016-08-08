@@ -1,0 +1,10 @@
+package com.sds.gallery;
+
+public class XCanvas extends Canvas{
+	
+	public XCanvas() {
+		// TODO Auto-generated constructor stub
+	
+	}
+
+}

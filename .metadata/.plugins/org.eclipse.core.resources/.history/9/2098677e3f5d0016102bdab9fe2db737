@@ -1,0 +1,17 @@
+package com.sds.ocjp;
+
+import java.awt.Canvas;
+
+public class AnonyTest {
+	Canvas can;
+
+	public AnonyTest() {
+		// TODO Auto-generated constructor stub
+		can = new Canvas();
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	}
+
+}
