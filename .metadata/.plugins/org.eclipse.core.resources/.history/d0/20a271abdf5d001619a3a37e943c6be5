@@ -24,14 +24,14 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class CollectionTest extends JFrame {
-	//ArrayLsit list;  *<>사용 X
+	//ArrayLsit list;
 	ArrayList<JButton> list;
 	JPanel p_north, p_center;
 	JButton btn_cre, btn_col;
 	
 	public CollectionTest() {
 		// TODO Auto-generated constructor stub
-		//list = new ArrayList(); *<>사용 X
+		//list = new ArrayList(); <>사용 X
 		list = new ArrayList<JButton>();  //리스트 생성
 		
 		p_north = new JPanel();
