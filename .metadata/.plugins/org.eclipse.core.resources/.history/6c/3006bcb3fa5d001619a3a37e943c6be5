@@ -1,0 +1,38 @@
+package com.sds.gui;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.table.TableModel;
+
+public class TablePrac  extends JFrame{
+	JPanel p_west,p_east;
+	
+	JTable table;
+	TableModel model;
+	
+	public TablePrac() {
+		// TODO Auto-generated constructor stub
+		super("테이블실습");
+		
+		p_west = new JPanel();
+		p_east = new JPanel();
+		
+		
+		
+		
+		
+		add(p_west	);
+		
+		
+		setSize(700,600);
+		setVisible(true);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+	}
+	
+	public static void main(String[] args){
+		new TablePrac();
+	}
+}

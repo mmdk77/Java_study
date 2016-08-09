@@ -1,0 +1,10 @@
+package com.sds.gui;
+
+import javax.swing.JFrame;
+
+public class TablePrac  extends JFrame{
+
+	public static void main(String[] args){
+		
+	}
+}

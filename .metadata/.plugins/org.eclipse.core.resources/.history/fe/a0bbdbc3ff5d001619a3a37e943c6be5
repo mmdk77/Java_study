@@ -1,0 +1,54 @@
+package com.sds.gui;
+
+import java.awt.BorderLayout;
+import java.awt.Choice;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.TableModel;
+
+import com.sds.collection.MemberModel;
+
+public class TablePrac  extends JFrame{
+	JPanel p_west,p_east;
+	Choice ch;
+	JTable table;
+	JScrollPane scroll;
+	TableModel model;
+	
+	
+	public TablePrac() {
+		// TODO Auto-generated constructor stub
+		super("테이블실습");
+		
+		p_west = new JPanel();
+		p_east = new JPanel();
+		
+		
+		table = new JTable(model = new MemberModel());
+		scroll = new JScrollPane(table);
+		ch = new Choice();
+		
+		ch.add("애완동물");
+		ch.add("회원정보");
+		
+		p_west.add(ch);
+		p_east.add(scroll);
+		
+		
+	
+		add(p_west, BorderLayout.WEST);
+		add(p_east, BorderLayout.EAST);
+		
+		setSize(700,600);
+		setVisible(true);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+	}
+	
+	public static void main(String[] args){
+		new TablePrac();
+	}
+}

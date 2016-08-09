@@ -6,6 +6,7 @@
 package com.sds.collection;
 
 import java.util.HashSet;
+import java.util.Iterator;
 
 import javax.swing.JButton;
 
@@ -24,7 +25,16 @@ public class SetTest {
 		// set.add(x);
 
 		// set.add("사과");
-		set.add(new JButton("나버튼"));
+		set.add(new JButton("버튼1"));
+		set.add(new JButton("버튼"));
+		set.add(new JButton("버튼2 "));
+		
+		Iterator it = set.iterator();
+		
+		while(it.hasNext()){
+			JButton bt = (JButton)it.next();
+			System.out.println(bt.getText());
+		}
 
 	}
 

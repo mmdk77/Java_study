@@ -1,0 +1,29 @@
+/*
+ * Swing에서 data출력 및 관리를 위한 컴포넌트 - JTable
+ * */
+
+package com.sds.collection;
+
+import javax.swing.JFrame;
+import javax.swing.JTable;
+
+public class TableTest extends JFrame{
+	String[] column = {"번호","이름","비밀번호","이메일"};
+	JTable table;
+	public TableTest() {
+		// TODO Auto-generated constructor stub
+		table = new JTable(3,4);
+		
+		add(table);
+			
+		setSize(400,300);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setVisible(true);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new TableTest();
+	}
+
+}

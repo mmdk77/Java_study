@@ -1,0 +1,19 @@
+package com.sds.collection;
+
+import java.util.HashMap;
+
+public class MapTest {
+
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		HashMap<String, String> map = new HashMap<>();
+		
+		map.put("m1", "사과");
+		map.put("m2", "포도");
+		map.put("m4", "수박");
+		map.put("m5", "딸기");
+		
+	}
+
+}

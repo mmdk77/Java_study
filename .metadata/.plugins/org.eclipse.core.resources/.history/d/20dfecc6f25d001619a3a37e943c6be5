@@ -1,0 +1,33 @@
+/*
+ * Jtable에 보여질 데이터 중, 회원관련된 데이터를 처리할 TableModel
+ * 
+*/
+
+package com.sds.collection;
+
+import javax.swing.table.AbstractTableModel;
+
+public class MemberModel extends AbstractTableModel {
+
+	@Override
+	//총 컬럼의 갯수
+	public int getColumnCount() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	//총 레코드 수
+	public int getRowCount() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Object getValueAt(int arg0, int arg1) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+
+}
