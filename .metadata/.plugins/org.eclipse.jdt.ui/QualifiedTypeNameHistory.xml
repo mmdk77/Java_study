@@ -20,7 +20,6 @@
 <fullyQualifiedTypeName name="com.sds.gui.EventTest"/>
 <fullyQualifiedTypeName name="java.awt.event.WindowListener"/>
 <fullyQualifiedTypeName name="com.sds.gui.MyListener"/>
-<fullyQualifiedTypeName name="java.lang.Object"/>
 <fullyQualifiedTypeName name="java.awt.TextField"/>
 <fullyQualifiedTypeName name="com.sds.gui.EventTest2"/>
 <fullyQualifiedTypeName name="javax.swing.JTextArea"/>
@@ -33,8 +32,6 @@
 <fullyQualifiedTypeName name="com.sds.gallery.MyButton"/>
 <fullyQualifiedTypeName name="com.sds.gallery.MyCanvas"/>
 <fullyQualifiedTypeName name="java.awt.Color"/>
-<fullyQualifiedTypeName name="javax.swing.JPanel"/>
-<fullyQualifiedTypeName name="java.awt.BorderLayout"/>
 <fullyQualifiedTypeName name="java.awt.Paint"/>
 <fullyQualifiedTypeName name="java.awt.Toolkit"/>
 <fullyQualifiedTypeName name="javax.imageio.ImageTypeSpecifier"/>
@@ -42,11 +39,15 @@
 <fullyQualifiedTypeName name="javax.swing.JTextField"/>
 <fullyQualifiedTypeName name="com.sds.gallery.XCanvas"/>
 <fullyQualifiedTypeName name="javax.swing.Action"/>
-<fullyQualifiedTypeName name="java.awt.Canvas"/>
 <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
 <fullyQualifiedTypeName name="javax.swing.JFrame"/>
 <fullyQualifiedTypeName name="com.sds.ocjp.AnonyTest"/>
-<fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
 <fullyQualifiedTypeName name="java.awt.FlowLayout"/>
+<fullyQualifiedTypeName name="javax.swing.JPanel"/>
+<fullyQualifiedTypeName name="java.awt.Canvas"/>
+<fullyQualifiedTypeName name="com.sds.gui.CircleMove"/>
+<fullyQualifiedTypeName name="java.awt.BorderLayout"/>
+<fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
+<fullyQualifiedTypeName name="java.lang.Object"/>
 <fullyQualifiedTypeName name="javax.swing.JButton"/>
 </qualifiedTypeNameHistroy>

@@ -1,0 +1,58 @@
+package com.sds.collection;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class CollectionTest extends JFrame {
+	
+	JPanel p_north, p_center;
+	JButton btn_cre, btn_col;
+	
+	public CollectionTest() {
+		// TODO Auto-generated constructor stub
+		p_north = new JPanel();
+		p_center = new JPanel();
+		p_center.setBackground(Color.green);
+		
+		btn_cre = new JButton("생성");
+		btn_col = new JButton("색상");
+		
+		p_north.add(btn_cre, BorderLayout.NORTH);
+		p_north.add(btn_col);
+		
+		//생성
+		btn_cre.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				JButton bt = new JButton("버튼");
+				p_center.add(bt);
+			}
+		});
+		//색상
+		btn_col.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setSize(500, 600);
+		setVisible(true);i
+	
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
