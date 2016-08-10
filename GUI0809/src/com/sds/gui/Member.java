@@ -86,7 +86,7 @@ public class Member extends JFrame {
 					String pwd = tf_pwd.getText();
 					String name = tf_name.getText();		
 					
-					table.addColumn();
+				
 					
 					list.add(id);
 					list.add(pwd);

@@ -1,0 +1,34 @@
+package com.sds.file;
+
+
+import java.awt.Canvas;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+
+class ProfileApp extends JFrame{
+	JPanel p_west,p_center;
+	JButton btn_open;
+	JLabel lb_profile;
+	Canvas can;
+	public ProfileApp(){
+		super("프로필사진불러오기");
+		p_west = new JPanel();
+		can = new Canvas();
+
+	
+		p_west.add(can);
+		add(p_west);
+		
+		setVisible(true);
+		setSize(600,500);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+	}
+	public static void main(String[] args){
+		new ProfileApp();
+	}
+}

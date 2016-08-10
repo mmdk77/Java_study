@@ -1,0 +1,8 @@
+package com.sds.collection;
+
+import javax.swing.table.TableModel;
+
+public class MemberModel extends TableModel {
+	
+
+}

@@ -1,0 +1,33 @@
+package com.sds.collection;
+
+import javax.swing.table.AbstractTableModel;
+
+public class MemberModel extends AbstractTableModel{
+	String[] column = {"ID","Password","Name"};
+	
+	@Override
+	public String getColumnName(int column) {
+		// TODO Auto-generated method stub
+		return this.column[column]
+	}
+	@Override
+	public int getColumnCount() {
+		// TODO Auto-generated method stub
+		return column.length;
+	}
+
+	@Override
+	public int getRowCount() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Object getValueAt(int rowIndex, int columnIndex) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+
+}
