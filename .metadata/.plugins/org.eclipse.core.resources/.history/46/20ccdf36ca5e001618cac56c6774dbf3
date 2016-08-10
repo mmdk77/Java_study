@@ -1,0 +1,57 @@
+package com.sds.file;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class FileChooseApp extends JFrame{
+	JPanel p_north, p_center, p_south;
+	JLabel lb_orgin, lb_save;
+	JButton btn_open, btn_save, btn_ok;
+	JTextField tf_open, tf_save;
+	
+	
+	public FileChooseApp() {
+		// TODO Auto-generated constructor stub
+		p_north = new JPanel();
+		lb_orgin = new JLabel("원본");
+		tf_open = new JTextField(20);
+		btn_open = new JButton("열기");
+		
+		p_center = new JPanel();
+		lb_save = new JLabel("저장경로");
+		tf_save = new JTextField(20);
+		btn_save = new JButton("저장");
+		
+		p_south = new JPanel();
+		btn_ok = new JButton("실행");
+		
+		
+		p_north.add(lb_orgin);
+		p_north.add(tf_open);
+		p_north.add(btn_open);
+		
+		p_center.add(lb_save);
+		p_center.add(tf_save);
+		p_center.add(btn_save);
+		
+		p_south.add(btn_ok);
+		
+		add(p_north);
+		add(p_center);
+		add(p_south);
+		
+		setVisible(true);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setSize(600, 300);
+	}
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new FileChooseApp();
+	}
+
+}

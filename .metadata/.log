@@ -2654,3 +2654,12 @@ Contains: The project description file (.project) for 'RemoteSystemsTempFiles' i
 !MESSAGE Save operation warnings.
 !SUBENTRY 1 org.eclipse.core.resources 2 234 2016-08-10 15:50:30.995
 !MESSAGE The project description file (.project) for 'RemoteSystemsTempFiles' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
+
+!ENTRY org.eclipse.jface.text 2 0 2016-08-10 16:04:44.916
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2016-08-10 16:04:44.918
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.core.resources 2 10035 2016-08-10 17:50:11.058
+!MESSAGE The workspace will exit with unsaved changes in this session.
