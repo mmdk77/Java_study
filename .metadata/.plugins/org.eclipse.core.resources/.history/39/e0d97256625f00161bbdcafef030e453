@@ -1,0 +1,59 @@
+package com.sds.stream;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class DocumentReader {
+	FileInputStream fis;
+	FileOutputStream fos;
+	String path = "C:/java_workspace/GUI0811/res/memo.txt";
+	String dest = "C:/java_workspace/GUI0811/res/memo1.txt";
+	
+
+	public DocumentReader() {
+		// TODO Auto-generated constructor stub
+		
+		
+		try {
+			fis=new FileInputStream(path);
+			fos = new FileOutputStream(dest);		
+			int data;
+			while((data = fis.read())!=-1){
+				System.out.println((char)data);
+				fos.write(data);
+			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			if(fos!=null){	
+				try {
+					fos.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			if(fis!=null){
+				try {
+					fis.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			
+		}
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new DocumentReader();
+	}
+
+}

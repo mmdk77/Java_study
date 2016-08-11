@@ -1,0 +1,39 @@
+package com.sds.json;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class ProfileApp {
+	FileReader fr;
+	BufferedReader buf_rd;
+	
+	String path ="C:/java_workspace/GUI0811/res/member.json";
+	
+	public ProfileApp() {
+		// TODO Auto-generated constructor stub
+		
+		try {
+			fr = new FileReader(path);
+			buf_rd = new BufferedReader(fr);
+			String data= null;	
+			while((data = buf_rd.readLine())!=null){
+				System.out.println(data);
+			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new ProfileApp();
+	}
+
+}

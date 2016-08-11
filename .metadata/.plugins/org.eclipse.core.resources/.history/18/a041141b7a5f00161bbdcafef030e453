@@ -1,0 +1,14 @@
+//Thumbnail class에서 사용
+package com.sds.graphic;
+
+import java.awt.Canvas;
+import java.awt.Graphics;
+
+public class MyCanvas extends Canvas{
+	@Override
+	public void paint(Graphics g) {
+		// TODO Auto-generated method stub
+		g.drawImage(img, 0, 0, 50,50,this);
+	}
+
+}

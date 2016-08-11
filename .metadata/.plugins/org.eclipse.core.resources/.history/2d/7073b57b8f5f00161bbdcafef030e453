@@ -1,0 +1,22 @@
+package com.sds.json;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+
+public class ProfileApp {
+	FileReader fr;
+	BufferedReader buf_rd;
+	
+	public ProfileApp() {
+		// TODO Auto-generated constructor stub
+		String path ="C:/java_workspace/GUI0811/res/member.json"
+		fr = new FileReader(file);
+	
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new ProfileApp();
+	}
+
+}

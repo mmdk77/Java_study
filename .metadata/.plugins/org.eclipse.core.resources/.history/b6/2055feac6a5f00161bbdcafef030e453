@@ -1,0 +1,36 @@
+package com.sds.stream;
+
+import java.awt.BorderLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.border.Border;
+
+public class Editor extends JFrame{
+	JButton btn;
+	JTextArea area;
+	JScrollPane scoll;
+
+	public Editor() {
+		// TODO Auto-generated constructor stub
+		btn = new JButton("¿­±â");
+		area = new JTextArea();
+		scoll = new JScrollPane(area);
+		
+		add(bt, BorderLayout.NORTH);
+		add(scoll);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setSize(600, 500);
+		setVisible(true);
+	}
+
+	public static void main(String[] args) {
+		
+		// TODO Auto-generated method stub
+		
+		new Editor();
+	}
+
+}

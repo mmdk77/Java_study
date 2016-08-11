@@ -1,0 +1,34 @@
+package com.sds.graphic;
+
+import java.awt.Graphics;
+import java.awt.Image;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class ThumbnailGallery extends JFrame{
+
+	JPanel p_left,p_right;
+	Image crnt_img;
+	MyCanvas can;
+	
+	public ThumbnailGallery() {
+		// TODO Auto-generated constructor stub
+		p_left = new JPanel();
+		p_right = new JPanel(){
+			@Override
+			public void paint(Graphics g) {
+				// TODO Auto-generated method stub
+				g.drawImage(crnt_img, 0, 0, 400, 350, this);
+			}
+		};
+		
+		
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
