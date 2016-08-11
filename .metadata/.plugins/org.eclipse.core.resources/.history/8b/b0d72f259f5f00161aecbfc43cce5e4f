@@ -1,0 +1,33 @@
+package com.sds.json;
+
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Toolkit;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class InnerPanel extends JPanel{
+	
+	Image img;
+	Toolkit kit;
+	JLabel lb_name,lb_gen,lb_age;
+	
+	String imgs;
+	
+	public InnerPanel() {
+		// TODO Auto-generated constructor stub
+		
+		kit = Toolkit.getDefaultToolkit();
+		img = kit.getImage(url);
+		
+		
+		
+	}
+
+	@Override
+	public void paint(Graphics g) {
+		// TODO Auto-generated method stub
+		g.drawImage(img, dx1, dy1, dx2, dy2, sx1, sy1, sx2, sy2, observer)
+	}
+}

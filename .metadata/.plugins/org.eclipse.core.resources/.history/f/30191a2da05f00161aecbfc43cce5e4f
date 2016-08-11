@@ -1,0 +1,43 @@
+package com.sds.json;
+
+import java.awt.Canvas;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Toolkit;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class InnerPanel extends JPanel{
+	
+	JPanel p_west. p_grid;
+	Image img;
+	Toolkit kit;
+	JLabel lb_name,lb_gen,lb_age;
+	Canvas can;
+	
+	String imgs;
+	
+	public InnerPanel(String url) {
+		// TODO Auto-generated constructor stub
+		
+		kit = Toolkit.getDefaultToolkit();
+		img = kit.getImage(url);
+		
+		can = new Canvas(){
+			@Override
+			public void paint(Graphics g) {
+				// TODO Auto-generated method stub
+				g.drawImage(img, 0, 0, 100, 100, this);
+			}
+		};
+		can.setPreferredSize(new Dimension(50, 50));
+		
+		p_west.add(can);
+		
+		
+		
+		
+	}
+}

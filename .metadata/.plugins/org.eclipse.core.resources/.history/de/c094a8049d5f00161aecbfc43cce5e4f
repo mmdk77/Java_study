@@ -1,0 +1,50 @@
+package com.sds.json;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+
+public class MemberPro extends JFrame{
+	
+	JPanel p_west,p_center;
+	JButton btn;
+	
+	JScrollPane scroll;
+	
+	
+	public MemberPro() {
+		// TODO Auto-generated constructor stub
+		super("프로필");
+		
+		p_west = new JPanel();
+		p_west.setBackground(Color.green);
+		
+		p_center = new JPanel();	
+		scroll = new JScrollPane(p_center);
+		p_center.setBackground(Color.WHITE);
+		
+	
+		
+		btn = new JButton("받기");
+		
+		p_west.add(btn);
+		
+		add(p_west,BorderLayout.WEST);
+		add(scroll,BorderLayout.CENTER);
+		
+		setVisible(true);
+		setSize(600,600);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new MemberPro();
+	}
+
+}
