@@ -35,7 +35,7 @@ public class MemberPro extends JFrame{
 		p_center = new JPanel();	
 		scroll = new JScrollPane(p_center);
 		p_center.setBackground(Color.WHITE);
-		ip = new InnerPanel(url);
+		//ip = new InnerPanel(url);
 		
 		chooser = new JFileChooser();
 		

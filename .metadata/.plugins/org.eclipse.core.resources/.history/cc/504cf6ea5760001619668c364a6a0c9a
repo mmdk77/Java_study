@@ -1,0 +1,11 @@
+/*
+ * 하나의 프로세스내에서 독립적으로 실행가능한 세부 실행단위- Thread
+ * Thread Class에서지원
+ * 
+ * */
+
+package com.sds.auto;
+
+public class MyThread extends Thread{
+
+}

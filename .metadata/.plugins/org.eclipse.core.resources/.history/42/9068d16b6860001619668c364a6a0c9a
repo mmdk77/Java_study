@@ -1,0 +1,44 @@
+package com.sds.auto;
+
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+public class MultiDownload extends JFrame {
+	JButton btn;
+
+	public MultiDownload() {
+		// TODO Auto-generated constructor stub
+		setLayout(new FlowLayout());
+		btn = new JButton("다운시작");
+		pb = new ProgressBar();
+		
+		add(btn);
+		
+		setSize(700, 600);
+		setVisible(true);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+
+		btn.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				thread.start();
+			}
+		});
+
+	}
+
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new MultiDownload();
+	}
+
+}

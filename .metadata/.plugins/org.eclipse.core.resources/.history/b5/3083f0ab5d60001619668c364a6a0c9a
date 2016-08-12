@@ -1,0 +1,43 @@
+package com.sds.auto;
+
+import java.awt.BorderLayout;
+import java.awt.Canvas;
+import java.awt.Graphics;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class AnimationThread extends JFrame {
+
+	JButton btn;
+	JPanel p_north;
+	Canvas can;
+	
+	
+	public AnimationThread() {
+		// TODO Auto-generated constructor stub
+	
+		btn = new JButton("»Æ¿Œ");
+		can = new Canvas(){
+			
+			@Override
+			public void paint(Graphics g) {
+				// TODO Auto-generated method stub
+				super.paint(g);
+			}
+		};
+		p_north.add(btn);
+		add(p_north, BorderLayout.NORTH);
+		add(can);
+		setVisible(true);
+		setSize(900, 800);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+	
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new AnimationThread();
+	}
+
+}

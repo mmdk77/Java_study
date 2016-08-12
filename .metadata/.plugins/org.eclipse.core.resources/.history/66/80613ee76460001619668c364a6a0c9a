@@ -1,0 +1,31 @@
+package com.sds.auto;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JProgressBar;
+
+public class MultiDownload extends JFrame {
+	
+	JButton btn;
+	JProgressBar[] bar1,bar2,bar3;
+	Thread thread;
+	
+	public MultiDownload() {
+		// TODO Auto-generated constructor stub
+		btn=new JButton("다운시작");
+		bar1 = new JProgressBar[3];
+		
+		
+		setSize(700,600);
+		setVisible(true);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+	}
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new MultiDownload();
+	}
+
+}

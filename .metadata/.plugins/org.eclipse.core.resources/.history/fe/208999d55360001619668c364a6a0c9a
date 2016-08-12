@@ -1,0 +1,16 @@
+package com.sds.auto;
+
+public class CountApp {
+	int cnt=0;
+	
+	for(){
+		
+		cnt++;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

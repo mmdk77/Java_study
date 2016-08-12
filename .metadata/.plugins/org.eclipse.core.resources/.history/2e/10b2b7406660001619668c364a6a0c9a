@@ -1,0 +1,12 @@
+package com.sds.auto;
+
+import javax.swing.JProgressBar;
+
+public class ProgressBar extends JProgressBar {
+	
+	public ProgressBar() {
+		// TODO Auto-generated constructor stub
+		
+	}
+
+}

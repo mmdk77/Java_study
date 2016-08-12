@@ -1,0 +1,33 @@
+package com.sds.auto;
+
+import java.awt.Dimension;
+
+import javax.swing.JProgressBar;
+
+public class ProgressBar extends JProgressBar {
+	
+	Thread thread;
+	int n;
+	
+	public ProgressBar(int n) {
+		// TODO Auto-generated constructor stub
+		
+		this.n = n;
+		setPreferredSize(new Dimension(600, 50));
+		try {
+			while(true){
+				thread.sleep(300);
+				fill();
+			}
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		fill();
+	}
+	public void fill() {
+		n++;
+		this.setValue(n);
+	}
+
+}

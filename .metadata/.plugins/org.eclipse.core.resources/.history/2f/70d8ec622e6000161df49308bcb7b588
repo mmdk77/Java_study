@@ -1,0 +1,28 @@
+{
+	"members" : [
+		{
+			"name":"홍길동",
+			"gender":"남",
+			"age":30,
+			"photo":"C:/java_workspace/GHI0812/res/img0.jpg"
+		},
+		{
+			"name":"이길동",
+			"gender":"남",
+			"age":20,
+			"photo":"C:\java_workspace\GHI0812\res\img1.jpg"
+		},
+		{
+			"name":"이길순",
+			"gender":"여",
+			"age":29,
+			"photo":"C:\java_workspace\GHI0812\res\img3.jpg"
+		},
+		{
+			"name":"홍길순",
+			"gender":"여",
+			"age":24,
+			"photo":"C:\java_workspace\GHI0812\res\img3.jpg"
+		}
+	]
+}

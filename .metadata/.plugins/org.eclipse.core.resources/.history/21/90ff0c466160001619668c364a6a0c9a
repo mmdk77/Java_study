@@ -1,0 +1,34 @@
+package com.sds.auto;
+
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JProgressBar;
+
+public class ProgressTest extends JFrame {
+
+	JButton btn;
+	JProgressBar bar;
+	
+	public ProgressTest() {
+		// TODO Auto-generated constructor stub
+		setLayout(new FlowLayout());
+		btn = new JButton("다운로드");
+		bar = new JProgressBar();
+		
+		add(btn);
+		add(bar);
+		
+		setSize(400,150);
+		setVisible(true);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new ProgressTest()
+	}
+
+}
