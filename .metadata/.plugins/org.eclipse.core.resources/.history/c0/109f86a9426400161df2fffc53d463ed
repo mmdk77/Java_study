@@ -1,0 +1,9 @@
+/*
+ * 공통적인 특성과 동작을 보유한 상위 객체 생성
+ * */
+
+package com.sds.game;
+
+public class GameObject {
+
+}

@@ -1,0 +1,25 @@
+package com.sds.thread;
+
+import java.awt.Canvas;
+
+import javax.swing.JFrame;
+
+public class AniTest extends JFrame{
+
+		Canvas can
+		
+		public AniTest() {
+			// TODO Auto-generated constructor stub
+		
+			setLocationRelativeTo(null);
+			setSize(800, 400);
+			setVisible(true);
+			
+		}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new AniTest();
+
+	}
+
+}

@@ -1,0 +1,40 @@
+/*
+ * 
+ * 키보드 이벤트 
+ * */
+
+package com.sds.game;
+
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+
+public class KeyBoard extends KeyAdapter{
+	
+	ObjectManager obj_manager;
+	
+	@Override
+	public void keyPressed(KeyEvent e) {
+		int result = e.getKeyCode();
+		
+		switch(result){
+		case KeyEvent.VK_LEFT:
+			
+			obj_manager.listObj.iterator().next();
+			break;
+		case KeyEvent.VK_UP:
+			break;
+		case KeyEvent.VK_RIGHT:
+			break;
+		case KeyEvent.VK_DOWN:
+			break;
+		
+		}
+	
+	}
+	@Override
+	public void keyReleased(KeyEvent e) {
+	
+		
+	}
+
+}

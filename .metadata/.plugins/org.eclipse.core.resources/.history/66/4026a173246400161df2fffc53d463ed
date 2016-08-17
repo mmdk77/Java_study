@@ -1,0 +1,82 @@
+package com.sds.thread;
+
+import java.awt.Canvas;
+import java.awt.Graphics;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
+import javax.swing.JFrame;
+
+public class AniTest extends JFrame implements KeyListener{
+
+		Canvas can;
+		int x;
+
+		
+		public AniTest() {
+			// TODO Auto-generated constructor stub
+		
+			can = new Canvas(){
+				@Override
+				public void paint(Graphics g) {
+					// TODO Auto-generated method stub
+					g.drawOval(x, 100, 50, 50);
+				}
+				
+			};
+			
+			setLocationRelativeTo(null);
+			setSize(800, 400);
+			setVisible(true);
+			
+		}
+		
+		@Override
+		public void keyPressed(KeyEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		
+		@Override
+		public void keyReleased(KeyEvent e) {
+			// TODO Auto-generated method stub
+			
+			if(e.getKeyCode() == KeyEvent.VK_SPACE){
+				Thread thread = new Thread(){
+					@Override
+					public void run() {
+						// TODO Auto-generated method stub
+						while(true){
+							try {
+								thread.sleep(10);
+							} catch (InterruptedException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+							x+=5;
+						}
+						
+					}
+				};
+				
+			}
+			
+		}//keyRelesed
+		
+		
+		@Override
+		public void keyTyped(KeyEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new AniTest();
+
+	}
+
+
+
+}

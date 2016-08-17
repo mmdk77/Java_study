@@ -1,0 +1,25 @@
+package com.sds.game;
+
+import java.awt.Color;
+import java.awt.Graphics;
+
+public class Hero {
+	
+	int x;
+	int y;
+
+	public void tic(){
+		//물리량의 변화값을 결정
+		x++;
+		y++;
+	}
+	public void render(Graphics g){
+		//자신이 어떻게 그려져야할지 정할 메서드
+		g.setColor(Color.BLACK);
+		g.drawRect(0, 0, GamePanel.WID, GamePanel.HEI);
+		
+		g.setColor(Color.YELLOW);
+		g.drawRect(x,y,50,50);
+	}
+	
+}

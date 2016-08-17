@@ -1,0 +1,78 @@
+package com.sds.thread;
+
+import java.awt.Canvas;
+import java.awt.Graphics;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
+import javax.swing.JFrame;
+
+public class CircleMov extends JFrame implements KeyListener {
+
+	Canvas can;
+	Thread thread;
+	int x =10;
+	
+	public CircleMov() {
+		// TODO Auto-generated constructor stub
+	
+		
+		can = new Canvas(){
+			@Override
+			public void paint(Graphics g) {
+				// TODO Auto-generated method stub
+				
+				g.drawOval(x, 10, 50, 50);
+			}
+		};
+		
+		add(can);
+		
+		setVisible(true);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setSize(600, 400);
+	
+		can.addKeyListener(this);
+	}
+	
+	
+	public void mov(int x){
+		this.x += x;
+		
+	}
+	@Override
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+		int result = e.getKeyCode();
+		//System.out.println(e);
+		if(result==32){
+			x+=10;
+			mov(x);
+			System.out.println(move(x));
+		}
+		
+		
+	}
+	
+	
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new CircleMov();
+	}
+
+
+
+}

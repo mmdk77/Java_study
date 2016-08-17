@@ -1,0 +1,35 @@
+package com.sds.game;
+
+import java.awt.Color;
+
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+
+public class GameWin extends JFrame{	
+	GamePanel game_p;
+	
+	JMenuBar bar;
+	JMenu[] menu = new JMenu[2];
+	JMenuItem[] item = new JMenuItem[3]; 
+	String[] itemTitle = {"시작","중지","종료"};
+	
+	public GameWin() {
+		// TODO Auto-generated constructor stub
+	
+		add(game_p= new GamePanel());
+		pack();
+		setLocationRelativeTo(null);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setVisible(true);
+		setBackground(Color.BLACK);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		new GameWin();
+	}
+
+}

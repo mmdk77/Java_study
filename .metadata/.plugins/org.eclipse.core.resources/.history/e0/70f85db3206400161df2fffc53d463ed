@@ -1,0 +1,43 @@
+package com.sds.thread;
+
+import java.awt.Canvas;
+import java.awt.Graphics;
+
+import javax.swing.JFrame;
+
+public class CircleMov extends JFrame {
+
+	Canvas can;
+	int x =10;
+	
+	public CircleMov() {
+		// TODO Auto-generated constructor stub
+	
+		
+		can = new Canvas(){
+			@Override
+			public void paint(Graphics g) {
+				// TODO Auto-generated method stub
+				
+				g.drawOval(x, 10, 50, 50);
+			}
+		};
+		
+		add(can);
+		
+		setVisible(true);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setSize(600, 400);
+	
+	}
+	
+	public void mov(){
+		
+		
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new CircleMov();
+	}
+
+}

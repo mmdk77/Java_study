@@ -1,0 +1,29 @@
+/*
+ * 
+ * 키보드 이벤트 
+ * */
+
+package com.sds.game;
+
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+
+public class KeyBoard extends KeyAdapter{
+	
+	@Override
+	public void keyPressed(KeyEvent e) {
+		int result = e.getKeyCode();
+		if(result==37 || result==39){
+			System.out.println("좌,우 누름");
+		}else if(result ==40 || result ==38){
+			System.out.println("위아래 누름");
+		}
+	
+	}
+	@Override
+	public void keyReleased(KeyEvent e) {
+	
+		
+	}
+
+}

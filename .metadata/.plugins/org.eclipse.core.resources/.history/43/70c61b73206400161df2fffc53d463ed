@@ -1,0 +1,22 @@
+package com.sds.thread;
+
+import java.awt.Canvas;
+
+import javax.swing.JFrame;
+
+public class CircleMov extends JFrame {
+
+	Canvas can;
+	
+	
+	public CircleMov() {
+		// TODO Auto-generated constructor stub
+	
+	
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new CircleMov();
+	}
+
+}

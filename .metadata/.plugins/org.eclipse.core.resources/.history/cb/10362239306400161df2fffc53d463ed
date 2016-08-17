@@ -1,0 +1,23 @@
+package com.sds.game;
+
+import javax.swing.JFrame;
+
+public class GameWin extends JFrame{
+	
+	
+	
+	public GameWin() {
+		// TODO Auto-generated constructor stub
+	
+		int wid, hei;
+	
+		setSize(wid, hei);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		new GameWin();
+	}
+
+}

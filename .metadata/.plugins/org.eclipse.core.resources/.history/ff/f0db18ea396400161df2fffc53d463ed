@@ -1,0 +1,13 @@
+package com.sds.game;
+
+public class Hero {
+
+	public void render(){
+		//자신이 어떻게 그려져야할지 정할 메서드
+	}
+	
+	public void tic(){
+		//물리량의 변화값을 결정
+	
+	}
+}

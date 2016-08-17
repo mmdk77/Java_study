@@ -1,0 +1,19 @@
+package com.sds.game;
+
+import java.awt.Graphics;
+
+public class Enemy extends GameObject{
+	
+	int x;
+	int y;
+	int velX=0;
+	int velY=0;
+
+	public void tic(){
+		
+	}
+	public void render(Graphics g){
+		
+		
+	}
+}

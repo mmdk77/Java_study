@@ -1,0 +1,70 @@
+ package com.sds.game;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+
+import javax.swing.JPanel;
+
+public class GamePanel extends JPanel implements Runnable{
+	public final static int WID= 1024; 
+	public final static int HEI=768;
+	
+	//심장부
+	Thread thread;
+	boolean flag=true;
+	
+	//Hero선언
+	Hero hero;
+	
+	public GamePanel() {
+		// TODO Auto-generated constructor stub
+		this.setPreferredSize(new Dimension(WID, HEI));
+		
+		createHero();
+	}
+	
+	//Hero 생성 메소드
+	public void createHero(){
+		hero = new Hero();
+	}
+	
+	@Override
+	public void paint(Graphics g) {
+		// TODO Auto-generated method stub
+		
+		hero.render(g);
+		System.out.println("paint");
+	}
+	
+	public void gameStart(){
+		if(thread != null){
+			return;
+		}
+		flag=true;
+		thread = new Thread(this);
+		thread.start();
+	}
+	public void gamePause(){
+		flag=false;
+		thread=null;
+	}
+	public void gameExit(){
+		System.exit(0);
+	}
+	
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		while(flag){
+			try {
+				Thread.sleep(1);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			System.out.println("게임작동중");
+			
+		}
+	}
+}

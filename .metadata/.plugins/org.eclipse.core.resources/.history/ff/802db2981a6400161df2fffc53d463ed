@@ -1,0 +1,61 @@
+package com.sds.thread;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JProgressBar;
+
+public class ETCApp extends JFrame implements Runnable{
+	
+	JButton btn;
+	JLabel lb;
+	JProgressBar bar1,bar2;
+	
+	
+	int n;
+	
+	public ETCApp() {
+		// TODO Auto-generated constructor stub
+	
+		btn = new JButton("¹öÆ°");
+		lb = new JLabel("0");
+		
+		bar1= new JProgressBar();
+		bar2 = new JProgressBar();
+		
+
+		setVisible(true);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setSize(400, 400);
+	}
+	
+	public void workingPro(){
+		n++;
+		
+		bar1.setValue(n);
+		bar2.setValue(n);
+		
+	}
+	
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		while(true){
+			try {
+				Thread.sleep(300);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+	}
+	
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new ETCApp();
+	}
+
+}

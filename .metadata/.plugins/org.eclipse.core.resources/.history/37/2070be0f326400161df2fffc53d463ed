@@ -1,0 +1,28 @@
+package com.sds.game;
+
+import javax.swing.JFrame;
+
+public class GameWin extends JFrame{
+	public final static int WID= 1024; 
+	public final static int HEI=768;
+	
+	GamePanel game_p;
+	public GameWin() {
+		// TODO Auto-generated constructor stub
+		game_p = new GamePanel();
+		
+		
+	
+		add(game_p);
+		setLocationRelativeTo(null);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setVisible(true);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		new GameWin();
+	}
+
+}

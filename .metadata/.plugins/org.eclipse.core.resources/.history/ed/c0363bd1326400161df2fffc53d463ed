@@ -1,0 +1,27 @@
+ package com.sds.game;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+
+import javax.swing.JPanel;
+
+public class GamePanel extends JPanel{
+	public final static int WID= 1024; 
+	public final static int HEI=768;
+
+	public GamePanel() {
+		// TODO Auto-generated constructor stub
+		this.setPreferredSize(new Dimension(WID, HEI));
+		setBackground(Color.BLACK);
+	}
+	
+	@Override
+	protected void paintComponent(Graphics g) {
+		// TODO Auto-generated method stub
+		
+
+	
+	}
+	
+}

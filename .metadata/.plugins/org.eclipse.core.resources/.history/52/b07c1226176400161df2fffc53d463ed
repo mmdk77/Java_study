@@ -1,0 +1,21 @@
+package com.sds.thread;
+
+public class MyThread extends Thread {
+	
+	int cnt = 0;
+	CounterApp cnt_app;
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		//독립적인 코드 수행 재정의
+		
+	
+	}
+	
+	public void count(){
+		cnt++;
+		cnt_app.lb.setText(Integer.toString(cnt));
+		
+	}
+
+}

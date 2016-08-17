@@ -1,0 +1,68 @@
+package com.sds.thread;
+
+import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class CounterApp extends JFrame implements Runnable{
+
+	JLabel lb;
+	JButton btn;
+	JPanel p_north;
+	int count;
+	Thread thread;
+	
+	public CounterApp() {
+		// TODO Auto-generated constructor stub
+	
+		lb = new JLabel(Integer.toString(count));
+		btn = new JButton("¹öÆ°");
+		p_north = new JPanel();
+		
+		
+		p_north.add(btn);
+		
+		add(p_north, BorderLayout.NORTH);
+		add(lb);		
+		
+		setVisible(true);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setSize(400, 400);
+		
+		
+		btn.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				thread.start();
+			}
+		});
+	}
+	
+	
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+		try {
+			thread.sleep(300);
+			lb.setText("±Û¾¾");
+			
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new CounterApp();
+	}
+
+
+}

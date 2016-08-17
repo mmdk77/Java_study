@@ -14,7 +14,6 @@ public class ProgressBar extends JProgressBar implements Runnable{
 		this.interval = interval;
 		this.setPreferredSize(new Dimension(400, 50));
 		
-		
 	}
 	@Override
 	public void run() {

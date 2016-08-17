@@ -1,0 +1,24 @@
+package com.sds.thread;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JProgressBar;
+
+public class ETCApp extends JFrame {
+	
+	JButton btn;
+	JLabel lb;
+	JProgressBar bar1,bar2;
+	
+	public ETCApp() {
+		// TODO Auto-generated constructor stub
+	}
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new ETCApp();
+	}
+
+}
