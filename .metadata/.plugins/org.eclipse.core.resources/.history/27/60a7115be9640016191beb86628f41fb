@@ -1,0 +1,11 @@
+/*
+ * 게임에 등장할 객체를 관리하는 클래스
+ * 객체에 대한 정보를 데이터베이스화 시켜 메모리상에 저장
+ * 객체를 모아 관리 ==> Collection Framework*/
+
+package com.sds.game;
+
+public class ObjectManager {
+
+	ArrayList objList;
+}

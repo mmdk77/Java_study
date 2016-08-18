@@ -1,0 +1,39 @@
+/*화면에 등장할 모든 게임 오브젝트 
+ * 구현메소드와 속성을 정의하기위한 최상위 클래스*/
+
+
+package com.sds.game;
+
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Toolkit;
+
+	
+abstract public class GameObj {
+	//오브젝트 속성
+	int x;
+	int y;
+	int width;
+	int height;
+	int velX;
+	int velY;
+	String name;
+	
+	//게임 이미지
+	Image img;
+	Toolkit kit;
+	
+	public GameObj(int x,int y, int width, int height, String name) {
+		// TODO Auto-generated constructor stub
+		//오브젝트를 담기위한 생성자
+		
+		this.x =x;
+		this.y = y;
+		this .width = width;
+		this.height = height;
+		this.name = name;
+	}
+	
+	abstract public void tick();
+	abstract public void render(Graphics g);
+}

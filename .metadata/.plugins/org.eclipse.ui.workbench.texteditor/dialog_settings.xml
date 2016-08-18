@@ -12,6 +12,7 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="/*화면에 등장할 모든 게임 오브젝트 "/>
 			<item value="pro"/>
 			<item value="p"/>
 			<item value=""/>

@@ -1,0 +1,34 @@
+package com.sds.game;
+
+import java.awt.Color;
+
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+
+public class GameWin extends JFrame{
+	//게임 옵션-(시작,정지,종료) , 도움말
+	GamePanel gamePanel;
+	
+	JMenuBar bar;
+	JMenu[] menu = JMenu[3];
+	JMenuItem[] item = JmenuItem[3];
+	
+	public GameWin(){
+		gamePanel = new GamePanel();
+		add(gamePanel);
+		pack();
+		setLocationRelativeTo(null);
+		setVisible(true);
+		setBackground(Color.BLACK);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new GameWin();
+
+	}
+
+}

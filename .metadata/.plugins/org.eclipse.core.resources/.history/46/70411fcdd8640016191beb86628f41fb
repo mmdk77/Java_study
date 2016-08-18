@@ -1,0 +1,16 @@
+package com.sds.game;
+
+public class GameWin {
+
+	public GameWin(){
+		
+		
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new GameWin();
+
+	}
+
+}

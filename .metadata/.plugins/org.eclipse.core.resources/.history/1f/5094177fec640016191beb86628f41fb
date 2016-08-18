@@ -1,0 +1,40 @@
+package com.sds.game;
+
+import java.awt.RenderingHints.Key;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+
+public class KeyBoard extends KeyAdapter{
+
+	ObjectManager objManager;
+	
+	public public KeyBoard(ObjectManager objectManager) {
+		// TODO Auto-generated constructor stub
+		this.objManager=objectManager;
+	}
+	@Override
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
+		int key = e.getKeyCode();
+		for(int i=0;i<objManager.objList.size();i++){
+			GameObj gameObj = objManager.objList.get(i);
+			if(gameObj.name.equals("ship")){
+				switch (key) {
+				case KeyEvent.VK_LEFT:
+					gameObj.velX=-2;
+					break;
+
+				case KeyEvent.VK_RIGHT:
+					gameObj.velY=+2;
+					break;
+				}
+			}
+		};
+	}
+	
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+}

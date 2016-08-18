@@ -49,6 +49,7 @@ public class KeyBoard extends KeyAdapter {
 
 	@Override
 	public void keyReleased(KeyEvent e) {
+		int result = e.getKeyCode();
 		for (int i = 0; i < obj_manager.listObj.size(); i++) {
 			gameObj = obj_manager.listObj.get(i);
 			if (gameObj.equals("Hero")) {

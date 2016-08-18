@@ -1,0 +1,28 @@
+package com.sds.game;
+
+import java.awt.Graphics;
+import java.awt.Image;
+
+public class Enemy extends GameObj{
+
+	Image img;
+	String[] imgPath = {"e1","e2","e3","e4"};
+	public Enemy(ObjectManager objectManager, int x, int y, int width, int height, String name) {
+		super(objectManager, x, y, width, height, name);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void tick() {
+		// TODO Auto-generated method stub
+		x+=velX;
+		y+=velY;
+	}
+
+	@Override
+	public void render(Graphics g) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

@@ -1,0 +1,23 @@
+package com.sds.game;
+
+import javax.swing.JFrame;
+
+public class GameWin extends JFrame{
+	//게임 옵션-(시작,정지,종료) , 도움말
+	GamePanel gamePanel;
+	public GameWin(){
+		gamePanel = new GamePanel();
+		add(gamePanel);
+		pack();
+		setVisible(true);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new GameWin();
+
+	}
+
+}

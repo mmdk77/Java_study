@@ -1,0 +1,26 @@
+package com.sds.game;
+
+import java.awt.Color;
+
+import javax.swing.JFrame;
+
+public class GameWin extends JFrame{
+	//게임 옵션-(시작,정지,종료) , 도움말
+	GamePanel gamePanel;
+	public GameWin(){
+		gamePanel = new GamePanel();
+		add(gamePanel);
+		pack();
+		setLocationRelativeTo(null);
+		setVisible(true);
+		setBackground(Color.BLACK);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new GameWin();
+
+	}
+
+}

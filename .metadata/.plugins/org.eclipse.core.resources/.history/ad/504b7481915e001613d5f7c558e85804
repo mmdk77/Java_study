@@ -1,8 +1,0 @@
-package com.sds.collection;
-
-import javax.swing.table.AbstractTableModel;
-
-public class MemberModel extends AbstractTableModel	{
-	
-
-}

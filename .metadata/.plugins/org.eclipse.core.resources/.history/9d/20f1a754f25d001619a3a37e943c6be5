@@ -1,9 +1,0 @@
-/*
- * Jtable에 보여질 데이터 중, 회원관련된 데이터를 처리할 TableModel
- * */
-
-package com.sds.collection;
-
-public class MemberModel {
-
-}

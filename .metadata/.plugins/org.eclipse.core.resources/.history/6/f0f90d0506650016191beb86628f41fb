@@ -1,0 +1,34 @@
+package com.sds.game;
+
+import java.awt.Graphics;
+import java.awt.Image;
+import java.util.Random;
+
+public class Enemy extends GameObj{
+
+	Image img;
+	String[] imgPath = {"e1.png","e2.png","e3.png","e4.png"};
+	public Enemy(ObjectManager objectManager, int x, int y, int width, int height, String name) {
+		super(objectManager, x, y, width, height, name);
+		// TODO Auto-generated constructor stub
+		Random rand = new Random();
+		img = getImage(imgPath[rand.nextInt(imgPath.length)]);
+		velX=-1;
+	}
+
+	@Override
+	public void tick() {
+		// TODO Auto-generated method stub
+		x+=velX;
+		y+=velY;
+		rect.setBounds(x, y, width, height);
+	}
+
+	@Override
+	public void render(Graphics g) {
+		// TODO Auto-generated method stub
+		g.drawImage(img, x	, y, null);
+		showRect(g);
+	}
+
+}

@@ -1,9 +1,0 @@
-/*
- * JTable에 보여질 데이터 중, 애견관련 데이터를 처리하는 TableModel
- * */
-
-package com.sds.collection;
-
-public class PetModel {
-
-}

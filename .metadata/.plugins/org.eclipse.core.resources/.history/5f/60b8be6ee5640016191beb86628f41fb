@@ -1,0 +1,36 @@
+package com.sds.game;
+
+import java.awt.Graphics;
+import java.awt.Image;
+import java.net.URL;
+
+import javax.imageio.ImageIO;
+
+public class Ship extends GameObj {
+	
+	Image img;
+	
+
+	public Ship(int x, int y, int width, int height, String name) {
+		super(x, y, width, height, name);
+		// TODO Auto-generated constructor stub
+		
+		Class myClass = this.getClass();
+		URL url=; //URL은 내 시스템내에서의 파일위치
+		
+		ImageIO.read(url.get);
+	}
+
+	@Override
+	public void tick() {
+		// TODO Auto-generated method stub
+		x+=velX;
+		y+=velY;
+	}
+
+	@Override
+	public void render(Graphics g) {
+		// TODO Auto-generated method stub
+		g.drawImage(img, x, y, width,height,null); //null - 현재컨테이너 X
+	}
+}

@@ -1,0 +1,29 @@
+package com.sds.game;
+
+import java.awt.Graphics;
+import java.awt.Image;
+
+public class Bullet extends GameObj{
+	Image img;
+	
+	public Bullet(int x, int y, int width, int height, String name) {
+		super(x, y, width, height, name);
+		// TODO Auto-generated constructor stub
+		img=getImage("bullet.png");
+	}
+
+	
+	@Override
+	public void tick() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void render(Graphics g) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
+}

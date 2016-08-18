@@ -1,0 +1,16 @@
+package com.sds.game;
+
+public class GameWin {
+	//게임 옵션-(시작,정지,종료) , 도움말 하위
+	public GameWin(){
+		
+		
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new GameWin();
+
+	}
+
+}
