@@ -1,0 +1,6 @@
+/*
+ * JTable은 디자인만 보여줌 실제적인 테이블에 대한 정보는 모델에 제공*/
+package com.sds.db;
+public class MyModel {
+
+}

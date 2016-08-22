@@ -8,6 +8,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.sql.Connection;
@@ -15,9 +17,11 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -28,7 +32,7 @@ public class BookMain extends JFrame implements ItemListener, ActionListener {
 	JPanel p_west; // 좌측 입력폼 패널
 	Choice ch_top, ch_sub; // 상,하위 카테고리 출력
 	JTextField t_name, t_publisher, t_author, t_price;
-	JButton bt_regist;
+	JButton bt_regist, bt_delete;
 
 	JPanel p_north; // 위쪽 입력 폼
 	Choice ch_category;
@@ -36,6 +40,7 @@ public class BookMain extends JFrame implements ItemListener, ActionListener {
 	JButton bt_search;
 
 	JScrollPane scroll;
+	MyModel model;
 	JTable table;
 
 	// DB접속정보
@@ -43,30 +48,62 @@ public class BookMain extends JFrame implements ItemListener, ActionListener {
 	String user = "java0819";
 	String password = "java0819";
 
+	// 하위 카테고리 보관
+	ArrayList<Integer> subcategory_id = new ArrayList<Integer>();
+
 	// DB접속
 	Connection con; // 접속정보를 지님
 	PreparedStatement pstmt;
 	ResultSet rs;
 
+	int book_id; // 유저가 선택한 테이블의 book_id
+
 	public BookMain() {
 		// TODO Auto-generated constructor stub
 
+		// 패널 왼쪽
 		p_west = new JPanel();
 		ch_top = new Choice();
 		ch_sub = new Choice();
 		t_name = new JTextField(13);
 		t_publisher = new JTextField(13);
 		t_author = new JTextField(13);
-		t_price = new JTextField(13);
+		t_price = new JTextField("0", 13);
 		bt_regist = new JButton("등록");
+		bt_delete = new JButton("삭제");
 
+		// 패널 북쪽
 		p_north = new JPanel();
 		ch_category = new Choice();
 		t_keyword = new JTextField(20);
 		bt_search = new JButton("검색");
 
-		table = new JTable();
+		connect();
+		table = new JTable(model = new MyModel(con));
 		scroll = new JScrollPane(table);
+
+		// 테이블 이벤트
+		table.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+				int row = table.getSelectedRow();
+				int col = table.getSelectedColumn();
+
+				String value = (String) table.getValueAt(row, 0); // book_id
+				book_id = Integer.parseInt(value);
+
+				System.out.println(value);
+				
+				String value2 = (String) table.getValueAt(row, col);
+				
+				t_name.setText(value2);
+				t_publisher.setText(value2);
+				t_author.setText(value2);
+				t_price.setText(value2);
+				
+			}
+		});
 
 		p_west.add(ch_top);
 		p_west.add(ch_sub);
@@ -75,6 +112,7 @@ public class BookMain extends JFrame implements ItemListener, ActionListener {
 		p_west.add(t_author);
 		p_west.add(t_price);
 		p_west.add(bt_regist);
+		p_west.add(bt_delete);
 
 		ch_top.add("선 택▼");
 		ch_sub.add("선 택▼");
@@ -98,8 +136,12 @@ public class BookMain extends JFrame implements ItemListener, ActionListener {
 		add(scroll);
 
 		// container와 이벤트 연결
+		// Item리스너
 		ch_top.addItemListener(this);
+
+		// 버튼 리스너
 		bt_regist.addActionListener(this);
+		bt_delete.addActionListener(this);
 
 		// Window - windowListener
 		addWindowListener(new WindowAdapter() {
@@ -191,10 +233,14 @@ public class BookMain extends JFrame implements ItemListener, ActionListener {
 			pstmt = con.prepareStatement(sql.toString());
 			rs = pstmt.executeQuery();
 
+			// 지우고 넣기
 			ch_sub.removeAll();
+			subcategory_id.removeAll(subcategory_id); // 배열내용 초기화
 			ch_sub.add("선 택▼");
 			while (rs.next()) {
 				ch_sub.add(rs.getString("title"));
+				subcategory_id.add(rs.getInt("subcategory_id")); // 배열의 서브카테고리
+																	// 추가
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -219,9 +265,60 @@ public class BookMain extends JFrame implements ItemListener, ActionListener {
 	}
 
 	public void addBook() {
-		String sql = "insert into book(book_id,subcategory_id,bookname,publisher,author,price)";
-		sql = sql + "values(seq_book.nextval,)";
+		// 현재 선택한 하위 카테고리 ID값 가져오기
+		int selectedIndex = ch_sub.getSelectedIndex();
+		int sub_id = subcategory_id.get(selectedIndex - 1); // Integer를 기본 자료형으로
+															// 바꾸는 것을 unBoxing
 
+		String book_name = t_name.getText();
+		String publisher = t_publisher.getText();
+		String author = t_author.getText();
+		int price = Integer.parseInt(t_price.getText());
+
+		JOptionPane.showMessageDialog(this, sub_id);
+
+		/*String sql = "insert into book(book_id,subcategory_id,bookname,publisher,author,price)";
+		sql = sql + "values(seq_book.nextval,'" + sub_id + "','" + book_name + "'," + "'" + publisher + "'," + "'"
+				+ author + "','" + "" + price + "')";*/
+		
+		String sql =  "insert into book(book_id,subcategory_id,bookname,publisher,author,price)";
+		sql = sql+"values(seq_book.nextval,?,?,?,?,?)";
+
+		System.out.println(sql);
+
+		try {
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, sub_id);
+			pstmt.setString(2, book_name);
+			pstmt.setString(3, publisher);
+			pstmt.setString(4, author);
+			pstmt.setInt(5, price);
+			
+			int result = pstmt.executeUpdate();
+			// 반환형이 숫자인이유? - 쿼리문에 의해 레코드수가 반환 (insert,update,delete 성공시: 1 실패시
+			// 0)
+			if (result != 0) {
+				JOptionPane.showMessageDialog(this, "등록성공");
+				model.selectAll();
+				table.updateUI();
+				model.fireTableDataChanged();
+			} else {
+				JOptionPane.showMessageDialog(this, "등록tlfbo");
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			if (pstmt != null) {
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
 	}
 
 	@Override
@@ -234,7 +331,29 @@ public class BookMain extends JFrame implements ItemListener, ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		addBook();
+
+		Object obj = e.getSource();
+		if (obj == bt_regist) {
+			addBook();
+		} else if (obj == bt_search) {
+
+		} else if (obj == bt_delete) {
+			int result = JOptionPane.showConfirmDialog(this, "삭제하시겠습니까?");
+			if (result == JOptionPane.OK_OPTION) {
+				if (book_id == 0) {
+					JOptionPane.showMessageDialog(this, "선택한책이 없습니다");
+					return;
+				}
+				if (model.deleteBook(book_id) != 0) {
+					JOptionPane.showMessageDialog(this, "삭제성공");
+					model.selectAll();
+					model.fireTableDataChanged();
+					table.updateUI();
+				} else {
+					JOptionPane.showMessageDialog(this, "삭제실패");
+				}
+			}
+		}
 	}
 
 	public static void main(String[] args) {

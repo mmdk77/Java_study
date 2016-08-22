@@ -1,0 +1,17 @@
+/*오직 오라클 데이터베이스에 대한 쿼리문 실행 객체*/
+
+package com.sds.db;
+
+import java.sql.PreparedStatement;
+
+public class OracleManager {
+	
+	
+	PreparedStatement pstmt;
+	
+	//모든 레코드 조회
+	public void selectAll(){
+		String sql ="select * from member2"
+	}
+
+}

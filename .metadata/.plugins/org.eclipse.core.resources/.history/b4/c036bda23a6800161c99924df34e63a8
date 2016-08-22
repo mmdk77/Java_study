@@ -1,0 +1,21 @@
+package com.sds.project;
+
+import javax.swing.JFrame;
+
+public class MovieApp extends JFrame{
+
+	MovieInfo movieInfo;
+	public MovieApp() {
+		// TODO Auto-generated constructor stub
+		movieInfo= new MovieInfo("Á¦¸ñ");
+	
+		setVisible(true);
+		setSize(400, 600);
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		new MovieApp();
+	}
+
+}

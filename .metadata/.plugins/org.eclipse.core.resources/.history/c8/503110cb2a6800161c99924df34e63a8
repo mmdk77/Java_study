@@ -1,0 +1,83 @@
+/*
+ * JTable은 디자인만 보여줌 실제적인 테이블에 대한 정보는 모델이 제공*/
+package com.sds.db;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import javax.swing.table.AbstractTableModel;
+
+public class MyModel extends AbstractTableModel{
+	
+	String[] colTitle={
+			"BOOK_ID",
+			"CATEGORY_ID",
+			"BOOKNAME",
+			"PUBLISHER",
+			"AUTHOR",
+			"PRICE"
+	};
+	ArrayList<String[]> data = new ArrayList<String[]>(); 
+	
+	Connection con;
+	PreparedStatement pstmt;
+	ResultSet rs;
+	
+	public MyModel(Connection con) {
+		// TODO Auto-generated constructor stub
+		this.con = con;
+	}
+	//모든레코드 가져오기
+	public void selectAll(){
+		String sql="select * from member2";
+	
+		try {
+			pstmt = con.prepareStatement(sql);
+			rs =	pstmt.executeQuery();
+			
+			while(rs.next()){
+				String[] record = new Stiring[colTitle.length] ;
+				record[0]= Integer.toString(rs.getString("BOOK_ID"));
+				record[1]= Integer.toString(rs.getString("SUB-CATEGORY_ID"))
+				record[2]=rs.getString("BOOKNAME");
+				record[3]=rs.getString("PUBLISHER");
+				record[4]=rs.getString("AUTOR");
+				record[5]= Integer.parseInt(rs.getString("PRICE"));
+				record[6]=rs.getString("REGATE");
+				
+				
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	    
+	}
+
+
+	@Override
+	public int getColumnCount() {
+		// TODO Auto-generated method stub
+		return colTitle.length;
+	}
+	@Override
+	public String getColumnName(int column) {
+		// TODO Auto-generated method stub
+		return colTitle[column];
+	}
+	@Override
+	public int getRowCount() {
+		// TODO Auto-generated method stub
+		return data.size();
+	}
+	@Override
+	public Object getValueAt(int row, int col) {
+		// TODO Auto-generated method stub
+		String[] record = data.get(row);
+		return record[col];
+	}
+
+}

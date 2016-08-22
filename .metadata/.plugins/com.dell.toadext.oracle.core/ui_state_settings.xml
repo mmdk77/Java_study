@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="UI_STATE">
+	<section name="91614060-8844-4b78-83a9-ceb5a01a5ea3">
+		<item value="&lt;list/&gt;" key="EDITORS"/>
+		<item value="" key="CONTAINER"/>
+	</section>
+	<section name="bb2aa2be-c3f4-4da3-a949-f775a38e8849">
+		<item value="&lt;list&gt;&#x0A;  &lt;SQL__WORKSHEET&gt;&#x0A;    &lt;isActive&gt;false&lt;/isActive&gt;&#x0A;    &lt;isDirty&gt;true&lt;/isDirty&gt;&#x0A;    &lt;index&gt;1&lt;/index&gt;&#x0A;    &lt;content&gt;SELECT * FROM book;&lt;/content&gt;&#x0A;    &lt;name&gt;Worksheet 1&lt;/name&gt;&#x0A;  &lt;/SQL__WORKSHEET&gt;&#x0A;&lt;/list&gt;" key="EDITORS"/>
+		<item value="" key="CONTAINER"/>
+	</section>
+</section>

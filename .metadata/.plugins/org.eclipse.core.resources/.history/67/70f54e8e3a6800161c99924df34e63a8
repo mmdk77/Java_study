@@ -1,0 +1,16 @@
+package com.sds.project;
+
+public class MovieApp {
+
+	MovieInfo movieInfo;
+	public MovieApp() {
+		// TODO Auto-generated constructor stub
+		movieInfo= new MovieInfo("Á¦¸ñ");
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		new MovieApp();
+	}
+
+}
