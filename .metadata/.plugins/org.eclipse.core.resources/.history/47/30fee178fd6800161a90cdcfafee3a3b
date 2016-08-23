@@ -1,0 +1,122 @@
+package com.sds.echo;
+
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.net.Socket;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+public class ChatClient extends JFrame implements ActionListener{
+	JPanel p_center, p_south;
+	JTextArea area;
+	JScrollPane scroll;
+	JTextField tf_chat;
+	JButton btnOk;
+	
+	Socket client;
+	BufferedReader buf_reader;
+	BufferedWriter buf_writer;
+	
+	
+	public ChatClient() {
+		// TODO Auto-generated constructor stub
+	
+		this.setLayout(new BorderLayout());
+		
+		p_center = new JPanel();
+		p_south = new JPanel();
+		
+		area=new JTextArea(15,15);
+		scroll = new JScrollPane(area);
+		tf_chat=new JTextField(15);;
+		btnOk=new JButton("전송");
+		
+		
+		
+		p_center.setLayout(new BorderLayout());
+		p_center.add(scroll);
+		p_south.setLayout(new FlowLayout());
+		p_south.add(tf_chat);
+		p_south.add(btnOk);
+		
+		add(p_center,BorderLayout.CENTER);
+		add(p_south,BorderLayout.SOUTH);
+	
+		btnOk.addActionListener(this);
+		
+		tf_chat.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyReleased(KeyEvent e) {
+				// TODO Auto-generated method stub
+				int key = e.getKeyCode();
+				if(key==KeyEvent.VK_ENTER){
+					//서버에 메세지 보내기
+					sendMsg();
+				}
+			}
+		});
+		
+		setVisible(true);
+		setSize(300,400);
+		
+		
+	}
+	
+	public void connect(){
+		try {
+			client = new Socket("70.12.112.121", 7777);
+			 sendMsg();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void sendMsg(){
+		String msg= tf_chat.getText();
+		try {
+			
+		while(true){
+			
+			msg = buf_reader.readLine();
+			System.out.println(msg);
+		
+			buf_writer.write(msg+"\n");
+			buf_writer.flush();
+		}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		Object obj = e.getSource();
+		connect();
+		if(obj == btnOk){
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new ChatClient();
+	}
+
+}

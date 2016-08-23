@@ -1,0 +1,29 @@
+package com.sds.echo;
+
+import java.io.IOException;
+import java.net.ServerSocket;
+
+public class EchoServer {
+	ServerSocket server;
+	int port = 7777;
+	
+	public EchoServer() {
+		// TODO Auto-generated constructor stub
+		try {
+			server = new ServerSocket(port);
+			server.accept();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			if(server!=null){
+				server.close();
+			}
+		}
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new EchoServer();
+	}
+
+}

@@ -1,0 +1,43 @@
+/*
+ * Stream 이란? 데이터의 흐름
+ * 
+ * 분류의 따른 2가지
+ * 
+ * 1.방향성 - 실행중인 프로그램 기준 (프로세스) : 입력(input)/출력(output)
+ * 
+ * 2.데이터 처리방법 - 바이트기반 스트림 : 1byte씩 이해
+ * 							문자기반 스트림 : 2byte씩 이해. (문자표현 가능-비영어권)
+ * 							버퍼기반 스트림 : 데이터 단위의 끝을 발견할때까지 버퍼에 모아둔 데이터를 읽어들이는 스트림
+ * 			
+ * */
+
+package com.sds.stream;
+
+import java.io.IOException;
+import java.io.InputStream;
+
+public class KeyBoardStream {
+
+	InputStream is;
+
+	public KeyBoardStream() {
+		// TODO Auto-generated constructor stub
+		
+		is = System.in;
+		
+		int data;
+		
+		try {
+			data = is.read();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

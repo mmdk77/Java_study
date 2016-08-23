@@ -1,0 +1,52 @@
+package com.sds.echo;
+
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+public class ChatClient extends JFrame {
+	JPanel p_center, p_south;
+	JTextArea area;
+	JScrollPane scroll;
+	JTextField tf_chat;
+	JButton btnOk;
+	
+	
+	
+	public ChatClient() {
+		// TODO Auto-generated constructor stub
+	
+		this.setLayout(new BorderLayout());
+		
+		p_center = new JPanel();
+		p_south = new JPanel();
+		
+		area=new JTextArea(15,15);
+		scroll = new JScrollPane(area);
+		tf_chat=new JTextField(15);;
+		btnOk=new JButton("Àü¼Û");
+		
+		p_center.add(scroll);
+		p_south.setLayout(new FlowLayout());
+		p_south.add(tf_chat);
+		p_south.add(btnOk);
+		
+		add(p_center,BorderLayout.CENTER);
+		add(p_south,BorderLayout.SOUTH);
+	
+		setVisible(true);
+		setSize(300,400);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new ChatClient();
+	}
+
+}

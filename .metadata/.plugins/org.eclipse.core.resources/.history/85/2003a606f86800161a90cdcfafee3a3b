@@ -1,0 +1,18 @@
+package com.sds.echo;
+
+import java.net.ServerSocket;
+
+public class EchoServer {
+	ServerSocket server;
+	int port = 7777;
+	
+	public EchoServer() {
+		// TODO Auto-generated constructor stub
+		server = new ServerSocket(port);
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new EchoServer();
+	}
+
+}

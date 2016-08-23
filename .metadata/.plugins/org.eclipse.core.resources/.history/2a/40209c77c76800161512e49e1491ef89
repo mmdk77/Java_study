@@ -1,0 +1,22 @@
+/*
+ * Stream 이란? 데이터의 흐름
+ * 
+ * 분류의 따른 2가지
+ * 
+ * 1.방향성 - 실행중인 프로그램 기준 (프로세스) : 입력(input)/출력(output)
+ * 
+ * 2.
+ * 
+ * */
+
+
+package com.sds.stream;
+
+public class KeyBoardStream {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

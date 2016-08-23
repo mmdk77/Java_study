@@ -1,0 +1,51 @@
+/*
+ * TCP soket
+ * 
+ * */
+
+
+package com.sds.network;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class ChatServer {
+
+	int port = 7777;
+	ServerSocket server;
+	Socket socket;
+	
+	InputStream is ;
+	
+	public ChatServer() {
+		// TODO Auto-generated constructor stub
+	
+	 try {
+		server = new ServerSocket(port);
+		System.out.println("家南积己");
+		socket = server.accept();
+		System.out.println("立加磊 惯斑");
+		
+		
+		int data;
+		data=is.read();
+		
+		System.out.println((char)data);
+		socket.getInputStream();
+		socket.getOutputStream();
+		
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		new ChatServer();
+	}
+
+}

@@ -1,0 +1,62 @@
+package com.sds.stream;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
+public class CmdApp {
+
+	InputStream is;
+	InputStreamReader reader;
+	BufferedReader buffer;
+
+	String data;
+	public CmdApp() {
+		// TODO Auto-generated constructor stub
+		is = System.in;
+		reader = new InputStreamReader(is);
+		buffer = new BufferedReader(reader);
+
+
+
+		try {
+			while (true) {
+				System.out.println("원하는 메뉴를 선택하세요");
+				System.out.println("1.입력");
+				System.out.println("2.조회");
+				
+				if(buffer.readLine() != null){
+					inputString();
+					
+				}
+					
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public void inputString(){
+		if (data.equals("1")) {
+			System.out.println(data);
+			System.out.println("종료를 원하시면 exit or quit 을 치세요");
+
+			if (data.equals("exit") || data.equals("quit")) {
+				System.exit(0);
+			}
+		} else if (data.equals("2")) {
+			System.out.println("조회할 내용을 입력하세요");
+			System.out.println(data);
+			if (data.equals(data)) {
+				System.out.println("찾은신 데이터는>>"+data);
+			}
+		}
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new CmdApp();
+	}
+
+}
